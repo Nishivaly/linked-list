@@ -8,6 +8,11 @@ myList.append("urdad");
 myList.append("urgrandpa");
 myList.append("urunclo");
 
+console.log(myList.contains("urmom"));
+console.log(myList.contains("urmam"));
+
+console.log(myList.find("urad"));
+
 myList.toString();
 myList.size();
 

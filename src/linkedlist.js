@@ -73,11 +73,38 @@ export default class LinkedList {
     this.#size -= 1;
   }
 
+  contains(value) {
+    let current = this.#head;
+    while (current) {
+      if (current.value === value) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
+  }
+
+  find(value) {
+    let current = this.#head;
+    let index = 0;
+    while (current) {
+      if (current.value === value) {
+        return index;
+      }
+      current = current.next;
+      index += 1;
+    }
+    return null;
+  }
+
   toString() {
     let current = this.#head;
     const values = [];
     while (current) {
-      values.push(current.value);
+      values.push(`(${current.value})`);
+      if (!current.next) {
+        values.push("null");
+      }
       current = current.next;
     }
     console.log(values.join(" -> "));
